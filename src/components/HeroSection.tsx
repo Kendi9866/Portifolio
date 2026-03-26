@@ -4,13 +4,11 @@ import { Camera } from "lucide-react";
 const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Decorative background */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 translate-x-20 hidden lg:block" />
       <div className="absolute bottom-20 left-10 w-72 h-72 rounded-full bg-primary/10 blur-3xl" />
 
       <div className="container mx-auto px-6 pt-24 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Text */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -20,10 +18,10 @@ const HeroSection = () => {
               Olá, eu sou
             </p>
             <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground leading-tight mb-6">
-              Seu Nome<span className="text-primary">.</span>
+              Gabriel Kendi<span className="text-primary">.</span>
             </h1>
             <p className="font-body text-lg text-muted-foreground max-w-md leading-relaxed mb-8">
-              Estudante de [seu curso] apaixonado por tecnologia e desenvolvimento. 
+              Estudante de Desenvolvimento de Software Multiplataforma apaixonado por tecnologia e desenvolvimento. 
               Aqui você encontra meus projetos acadêmicos e profissionais.
             </p>
             <div className="flex gap-4">
@@ -42,7 +40,6 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Photo placeholder */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -54,7 +51,6 @@ const HeroSection = () => {
                 <Camera className="w-12 h-12 text-muted-foreground" />
                 <p className="font-body text-sm text-muted-foreground">Sua foto aqui</p>
               </div>
-              {/* Decorative frame */}
               <div className="absolute -bottom-4 -right-4 w-72 h-72 md:w-96 md:h-96 rounded-2xl border-2 border-primary/30 -z-10" />
             </div>
           </motion.div>
