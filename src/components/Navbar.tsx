@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const navItems = [
   { label: "Início", href: "#hero" },
   { label: "Faculdade", href: "#faculdade" },
-  { label: "Trabalho", href: "#trabalho" },
+  { label: "Carreira", href: "#carreira" },
   { label: "Contato", href: "#contato" },
 ];
 

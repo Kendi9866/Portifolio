@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, MapPin } from "lucide-react";
 
 const contactItems = [
-  { icon: Mail, label: "seuemail@email.com", href: "mailto:seuemail@email.com" },
-  { icon: Linkedin, label: "linkedin.com/in/seuperfil", href: "https://linkedin.com" },
-  { icon: Github, label: "github.com/seuusuario", href: "https://github.com" },
-  { icon: MapPin, label: "Sua Cidade, Estado", href: "#" },
+  { icon: Mail, label: "kendigabriel29@gmail.com", href: "mailto:kendigabriel29@gmail.com" },
+  { icon: Linkedin, label: "www.linkedin.com/in/gabrielkendi", href: "www.linkedin.com/in/gabrielkendi" },
+  { icon: Github, label: "https://github.com/Kendi9866", href: "https://github.com/Kendi9866" },
+  { icon: MapPin, label: "São Paulo, São Paulo", href: "#" },
 ];
 
 const ContactSection = () => {

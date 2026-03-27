@@ -5,17 +5,18 @@ interface ProjectCardProps {
   title: string;
   description: string;
   tags: string[];
+  links: string[];
   index: number;
 }
 
-const ProjectCard = ({ title, description, tags, index }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, tags, links ,index }: ProjectCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative rounded-xl bg-card border border-border p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300"
+      className="group relative rounded-xl bg-card border border-border p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300 h-[200px]" 
     >
       {/* Colored top accent */}
       <div className="absolute top-0 left-6 right-6 h-0.5 bg-primary/40 group-hover:bg-primary transition-colors rounded-b" />
@@ -37,9 +38,11 @@ const ProjectCard = ({ title, description, tags, index }: ProjectCardProps) => {
         ))}
       </div>
       <div className="flex gap-3">
-        <button className="flex items-center gap-1.5 text-xs font-body text-muted-foreground hover:text-primary transition-colors">
-          <Github className="w-3.5 h-3.5" /> Código
-        </button>
+        <a href="https://github.com/Kendi9866/Krusty-Burger-2sem">
+          <button className="flex items-center gap-1.5 text-xs font-body text-muted-foreground hover:text-primary transition-colors">
+           <Github className="w-3.5 h-3.5" /> Código 
+          </button>
+        </a>
         <button className="flex items-center gap-1.5 text-xs font-body text-muted-foreground hover:text-primary transition-colors">
           <ExternalLink className="w-3.5 h-3.5" /> Demo
         </button>

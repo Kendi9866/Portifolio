@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import { GraduationCap, Briefcase, ChevronLeft, ChevronRight } from "lucide-react";
 
-// Componente para a lista com scroll
 const ProjectCarousel = ({ projects }) => {
   const scrollRef = useRef(null);
 
@@ -55,53 +54,41 @@ const ProjectCarousel = ({ projects }) => {
 };
 
 const collegeProjects = [
-  // ... seus dados de faculdade
   {
-    title: "Sistema de Gestão Acadêmica",
-    description: "Aplicação web para gerenciamento de notas, frequência e informações de alunos.",
-    tags: ["React", "Node.js", "PostgreSQL"],
+    title: "Site para cursos de libras",
+    description: "Site para cursos de libras com foco em ser apenas uma landing page.",
+    tags: ["React", "NodeJS"],
+    links: [""]
   },
   {
-    title: "App de Delivery",
-    description: "Protótipo de aplicativo de delivery com sistema de pedidos e cardápio dinâmico.",
-    tags: ["React Native", "Firebase", "UX Design"],
+    title: "Krusty Burguer",
+    description: "Sistema de hamburgueria onde você pode fazer pedidos pelo proprio site.",
+    tags: ["Handlebars", "NodeJS", "PostgreSQL"],
+    links: ["https://github.com/Kendi9866/Krusty-Burger-2sem"]
   },
   {
-    title: "Análise de Dados Climáticos",
-    description: "Dashboard interativo para visualização de dados meteorológicos.",
-    tags: ["Python", "Pandas", "Matplotlib"],
-  },
-  // Adicione mais para testar o scroll
-  {
-    title: "Novo Projeto 1",
-    description: "Descrição de exemplo para testar o botão lateral.",
-    tags: ["Next.js", "Tailwind"],
-  },
-];
-
-const workProjects = [
-  // ... seus dados profissionais
-  {
-    title: "Portal do Cliente",
-    description: "Plataforma interna para acompanhamento de chamados e métricas.",
-    tags: ["TypeScript", "React", "API REST"],
+    title: "Go.Planner",
+    description: "Planejador de viagens onde é possível chamar seus convidados dentro do site.",
+    tags: ["React", "NodeJS", "MongoDB"],
+    links: ["https://github.com/Kendi9866/go-planner-3sem"]
   },
   {
-    title: "Automação de Relatórios",
-    description: "Sistema automatizado para geração de relatórios financeiros.",
-    tags: ["Python", "Excel", "Automação"],
+    title: "Site arrematador de leilões",
+    description: "Arrematador de leilões centralizando dados dos grandes bancos em apenas um site.",
+    tags: ["Next.js", "Python", "MongoDB"],
+    links: ["https://github.com/Kendi9866/PI-Motor-de-Busca-4-sem"]
   },
   {
-    title: "Landing Page Institucional",
-    description: "Redesign completo do site institucional da empresa.",
-    tags: ["Next.js", "Tailwind", "SEO"],
+    title: "Go.Planner APP",
+    description: "Planejador de viagens onde é possível chamar seus convidados para a versão mobile!",
+    tags: ["React Native", "Spring Boot 3", "MongoDB"],
+    links: ["https://github.com/Bonde-do-tigrinho/Go-Planner-Java"]
   },
 ];
 
 const ProjectsSection = () => {
   return (
     <>
-      {/* College Projects */}
       <section id="faculdade" className="py-24">
         <div className="container mx-auto px-6">
           <motion.div
@@ -113,7 +100,7 @@ const ProjectsSection = () => {
           >
             <GraduationCap className="w-7 h-7 text-primary" />
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Projetos de Faculdade
+              Meus Projetos
             </h2>
           </motion.div>
 
@@ -121,30 +108,6 @@ const ProjectsSection = () => {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="container mx-auto px-6">
-        <div className="h-px bg-border" />
-      </div>
-
-      {/* Work Projects */}
-      <section id="trabalho" className="py-24">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center gap-3 mb-12"
-          >
-            <Briefcase className="w-7 h-7 text-primary" />
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Projetos Profissionais
-            </h2>
-          </motion.div>
-
-          <ProjectCarousel projects={workProjects} />
-        </div>
-      </section>
     </>
   );
 };
