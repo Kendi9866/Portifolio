@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import { GraduationCap, ChevronLeft, ChevronRight } from "lucide-react";
 import krustyImg from "../assets/krusty-burguer/index.png"
-import goPlannerImg from "../assets/Go.Planner-Web/index.png"
+import goPlannerImg from "../assets/go-planner-web/index.png"
 import leilaoImg from "../assets/leilao-facil/buscador.png"
-import goPlannerMobileImg from "../assets/Go.Planner-Mobile/home.png"
+import goPlannerMobileImg from "../assets/go-planner-mobile/home.png"
 
 const ProjectCarousel = ({ projects }) => {
   const scrollRef = useRef(null);
