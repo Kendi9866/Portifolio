@@ -2,6 +2,10 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import { GraduationCap, Briefcase, ChevronLeft, ChevronRight } from "lucide-react";
+import krustyImg from "../assets/krusty-burguer/index.png"
+import goPlannerImg from "../assets/Go.Planner-Web/index.png"
+import leilaoImg from "../assets/leilao-facil/buscador.png"
+import goPlannerMobileImg from "../assets/Go.Planner-Mobile/home.png"
 
 const ProjectCarousel = ({ projects }) => {
   const scrollRef = useRef(null);
@@ -28,14 +32,12 @@ const ProjectCarousel = ({ projects }) => {
         <ChevronLeft className="w-6 h-6 text-primary" />
       </button>
 
-      {/* Container de Scroll */}
       <div
         ref={scrollRef}
         className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-4 px-2"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {projects.map((project, i) => (
-          <div key={project.title} className="min-w-[300px] md:min-w-[350px] lg:min-w-[400px] snap-start">
+          <div key={project.title} className="flex min-w-[300px] md:min-w-[350px] lg:min-w-[400px] snap-start">
             <ProjectCard {...project} index={i} />
           </div>
         ))}
@@ -56,32 +58,41 @@ const ProjectCarousel = ({ projects }) => {
 const collegeProjects = [
   {
     title: "Site para cursos de libras",
+    role: "Desenvolvedor Frontend",
     description: "Site para cursos de libras com foco em ser apenas uma landing page.",
     tags: ["React", "NodeJS"],
     links: [""]
   },
   {
     title: "Krusty Burguer",
+    role: "Fullstack Developer",
     description: "Sistema de hamburgueria onde você pode fazer pedidos pelo proprio site.",
     tags: ["Handlebars", "NodeJS", "PostgreSQL"],
+    imageUrl: krustyImg,
     links: ["https://github.com/Kendi9866/Krusty-Burger-2sem"]
   },
   {
     title: "Go.Planner",
+    role: "DBA e Backend Developer",
     description: "Planejador de viagens onde é possível chamar seus convidados dentro do site.",
     tags: ["React", "NodeJS", "MongoDB"],
+    imageUrl: goPlannerImg,
     links: ["https://github.com/Kendi9866/go-planner-3sem"]
   },
   {
     title: "Site arrematador de leilões",
+    role: "DBA e Backend Developer",
     description: "Arrematador de leilões centralizando dados dos grandes bancos em apenas um site.",
     tags: ["Next.js", "Python", "MongoDB"],
+    imageUrl: leilaoImg,
     links: ["https://github.com/Kendi9866/PI-Motor-de-Busca-4-sem"]
   },
   {
     title: "Go.Planner APP",
+    role: "DBA e Backend Developer",
     description: "Planejador de viagens onde é possível chamar seus convidados para a versão mobile!",
     tags: ["React Native", "Spring Boot 3", "MongoDB"],
+    imageUrl: goPlannerMobileImg,
     links: ["https://github.com/Bonde-do-tigrinho/Go-Planner-Java"]
   },
 ];

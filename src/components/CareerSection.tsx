@@ -30,7 +30,6 @@ const CareerSection = () => {
         </motion.div>
 
         <div className="relative">
-          {/* Timeline line */}
           <div className="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-border" />
 
           <div className="space-y-10">
@@ -43,7 +42,6 @@ const CareerSection = () => {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="relative pl-12 md:pl-20"
               >
-                {/* Timeline dot */}
                 <div className="absolute left-2.5 md:left-6.5 top-1.5 w-3 h-3 rounded-full bg-primary ring-4 ring-background" />
 
                 <div className="rounded-xl bg-card border border-border p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300">
