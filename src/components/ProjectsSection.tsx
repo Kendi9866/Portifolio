@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
-import { GraduationCap, Briefcase, ChevronLeft, ChevronRight } from "lucide-react";
+import { GraduationCap, ChevronLeft, ChevronRight } from "lucide-react";
 import krustyImg from "../assets/krusty-burguer/index.png"
 import goPlannerImg from "../assets/Go.Planner-Web/index.png"
 import leilaoImg from "../assets/leilao-facil/buscador.png"
