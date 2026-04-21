@@ -23,7 +23,6 @@ const ProjectCarousel = ({ projects }) => {
 
   return (
     <div className="relative group">
-      {/* Botão Esquerdo */}
       <button
         onClick={() => scroll("left")}
         className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm border border-border p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"
@@ -31,10 +30,9 @@ const ProjectCarousel = ({ projects }) => {
       >
         <ChevronLeft className="w-6 h-6 text-primary" />
       </button>
-
       <div
         ref={scrollRef}
-        className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-4 px-2"
+        className="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory py-4 px-2"
       >
         {projects.map((project, i) => (
           <div key={project.title} className="flex min-w-[300px] md:min-w-[350px] lg:min-w-[400px] snap-start">
@@ -43,7 +41,6 @@ const ProjectCarousel = ({ projects }) => {
         ))}
       </div>
 
-      {/* Botão Direito */}
       <button
         onClick={() => scroll("right")}
         className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm border border-border p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"
@@ -100,7 +97,7 @@ const collegeProjects = [
 const ProjectsSection = () => {
   return (
     <>
-      <section id="faculdade" className="py-24">
+      <section id="faculdade" className="py-24 overflow-hidden"> 
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -118,7 +115,6 @@ const ProjectsSection = () => {
           <ProjectCarousel projects={collegeProjects} />
         </div>
       </section>
-
     </>
   );
 };

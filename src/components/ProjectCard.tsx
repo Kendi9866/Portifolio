@@ -3,9 +3,9 @@ import { ExternalLink, Github } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
-  role: string; // Nova prop para sua participação
+  role: string;
   description: string;
-  imageUrl: string;
+  imageUrl?: string; // Tornada opcional caso algum projeto não tenha
   tags: string[];
   links: string[];
   index: number;
@@ -21,6 +21,7 @@ const ProjectCard = ({ title, role, description, imageUrl, tags, links, index }:
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
+      // h-full garante que o card ocupe toda a altura do container flex do carrossel
       className="group relative rounded-xl bg-card border border-border p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col h-full" 
     >
       <div className="absolute top-0 left-6 right-6 h-0.5 bg-primary/40 group-hover:bg-primary transition-colors rounded-b" />
@@ -29,12 +30,16 @@ const ProjectCard = ({ title, role, description, imageUrl, tags, links, index }:
         {title}
       </h3>
 
-      <div className="mb-4 overflow-hidden rounded-lg border border-border bg-muted aspect-video">
-        <img 
-          src={imageUrl} 
-          alt={`Thumbnail do projeto ${title}`}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+      <div className="mb-4 overflow-hidden rounded-lg border border-border bg-muted aspect-video w-full flex items-center justify-center">
+        {imageUrl ? (
+          <img 
+            src={imageUrl} 
+            alt={`Thumbnail do projeto ${title}`}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <span className="text-xs text-muted-foreground italic">Imagem em breve</span>
+        )}
       </div>
 
       <div className="mb-2">
@@ -43,42 +48,44 @@ const ProjectCard = ({ title, role, description, imageUrl, tags, links, index }:
         </span>
       </div>
 
-      <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">
+      <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">
         {description}
       </p>
 
-      <div className="flex flex-wrap gap-2 mb-4 mt-auto">
-        {tags.map((tag) => (
-          <span
-            key={tag}
-            className="px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium font-body"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
+      <div className="mt-auto">
+        <div className="flex flex-wrap gap-2 mb-4">
+          {tags.map((tag) => (
+            <span
+              key={tag}
+              className="px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium font-body"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
 
-      <div className="flex gap-3">
-        {codeLink && (
-          <a
-            href={codeLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs font-body text-muted-foreground hover:text-primary transition-colors"
-          >
-            <Github className="w-3.5 h-3.5" /> Codigo
-          </a>
-        )}
-        {demoLink && (
-          <a
-            href={demoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs font-body text-muted-foreground hover:text-primary transition-colors"
-          >
-            <ExternalLink className="w-3.5 h-3.5" /> Demo
-          </a>
-        )}
+        <div className="flex gap-3">
+          {codeLink && (
+            <a
+              href={codeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-xs font-body text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Github className="w-3.5 h-3.5" /> Codigo
+            </a>
+          )}
+          {demoLink && (
+            <a
+              href={demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-xs font-body text-muted-foreground hover:text-primary transition-colors"
+            >
+              <ExternalLink className="w-3.5 h-3.5" /> Demo
+            </a>
+          )}
+        </div>
       </div>
     </motion.div>
   );
