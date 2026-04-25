@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import { GraduationCap, ChevronLeft, ChevronRight } from "lucide-react";
+import libras from "../assets/libras/libras.png"
 import krustyImg from "../assets/krusty-burguer/index.png"
 import goPlannerImg from "../assets/go-planner-web/index.png"
 import leilaoImg from "../assets/leilao-facil/buscador.png"
@@ -58,7 +59,8 @@ const collegeProjects = [
     role: "Desenvolvedor Frontend",
     description: "Site para cursos de libras com foco em ser apenas uma landing page.",
     tags: ["React", "NodeJS"],
-    links: [""]
+    imageUrl: libras,
+    links: ["https://github.com/Kendi9866/PROJETO_PI"]
   },
   {
     title: "Krusty Burguer",

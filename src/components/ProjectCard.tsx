@@ -5,7 +5,7 @@ interface ProjectCardProps {
   title: string;
   role: string;
   description: string;
-  imageUrl?: string; // Tornada opcional caso algum projeto não tenha
+  imageUrl?: string;
   tags: string[];
   links: string[];
   index: number;
